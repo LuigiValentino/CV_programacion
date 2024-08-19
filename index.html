@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación IT Profesional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background: rgb(33, 37, 41);
+            background: linear-gradient(160deg, rgba(33, 37, 41, 1) 0%, rgba(21, 25, 28, 1) 100%);
+            color: white;
+            font-family: "IBM Plex Sans", sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container, .form-container {
+            max-width: 650px;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            background-color: #1d2124;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.3em;
+        }
+
+        .header h2 {
+            margin: 10px 0;
+            font-size: 1.5em;
+            font-weight: 400;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h3 {
+            font-size: 1.5em;
+            border-bottom: 2px solid #ff8c00;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            margin: 0;
+            line-height: 1.7em;
+        }
+
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 20px;
+        }
+
+        .experience-item h4, .education-item h4, .project-item h4 {
+            margin: 0;
+            font-size: 1.3em;
+        }
+
+        .experience-item h5, .education-item h5 {
+            margin: 5px 0;
+            font-size: 1.1em;
+            font-weight: 300;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            flex: 1 1 calc(50% - 10px);
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .social-icons a:hover {
+            color: #FFD700;
+        }
+
+        .testimonials {
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .testimonial-item {
+            margin-bottom: 15px;
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+        }
+
+        .testimonial-item .author {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+        }
+
+        .form-container h1, .form-container h3 {
+            color: #ff8c00;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .form-container input, .form-container textarea {
+            width: 90%;
+            margin-bottom: 15px;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            font-size: 1em;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-container input:focus, .form-container textarea:focus {
+            border-color: #ff8c00;
+            outline: none;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff8c00;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            color: white;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .form-container button:hover {
+            background-color: #ff6500;
+        }
+
+        /* Botones de descarga más destacados */
+        .form-container .download-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .form-container .download-buttons button {
+            flex: 1 1 calc(50% - 10px);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .header h2 {
+                font-size: 1.3em;
+            }
+            
+            .section h3 {
+                font-size: 1.3em;
+            }
+            
+            .experience-item h4, .education-item h4, .project-item h4 {
+                font-size: 1.2em;
+            }
+            
+            .experience-item h5, .education-item h5 {
+                font-size: 1em;
+            }
+
+            .skills {
+                gap: 5px;
+            }
+            
+            .skill {
+                flex: 1 1 100%;
+            }
+            
+            .form-container button {
+                font-size: 1em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5em;
+            }
+            
+            .header h2 {
+                font-size: 1.2em;
+            }
+            
+            .section h3 {
+                font-size: 1.2em;
+            }
+            
+            .experience-item h4, .education-item h4, .project-item h4 {
+                font-size: 1.1em;
+            }
+            
+            .experience-item h5, .education-item h5 {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Formulario para ingresar datos -->
+    <div class="form-container">
+        <h1>Curriculum para desarrolladores/programadores</h1>
+        <p>Usa libremente este template de Curriculum para crear una presentación formal y detallada sobre tu servicios y expórtalo en PDF y PNG sin costos.</p>
+        <br><br>
+        <h3>Llena tus datos</h3>
+        <form id="templateForm">
+            <input type="text" id="nombre" placeholder="Nombre Completo" required>
+            <input type="text" id="cargo" placeholder="Cargo Actual/Título" required>
+            <input type="text" id="ubicacion" placeholder="Ubicación" required>
+            <textarea id="sobreMi" placeholder="Sobre Mí" required></textarea>
+
+            <h4>Experiencia Profesional</h4>
+            <input type="text" id="exp1Cargo" placeholder="Cargo en Empresa 1" required>
+            <input type="text" id="exp1Empresa" placeholder="Nombre de la Empresa 1, Fecha" required>
+            <textarea id="exp1Descripcion" placeholder="Descripción de la experiencia 1" required></textarea>
+
+            <input type="text" id="exp2Cargo" placeholder="Cargo en Empresa 2" required>
+            <input type="text" id="exp2Empresa" placeholder="Nombre de la Empresa 2, Fecha" required>
+            <textarea id="exp2Descripcion" placeholder="Descripción de la experiencia 2" required></textarea>
+
+            <h4>Habilidades Técnicas</h4>
+            <textarea id="habilidadesLenguajes" placeholder="Lenguajes de Programación" required></textarea>
+            <textarea id="habilidadesFrameworks" placeholder="Frameworks" required></textarea>
+            <textarea id="habilidadesHerramientas" placeholder="Herramientas" required></textarea>
+            <textarea id="habilidadesOtros" placeholder="Otros" required></textarea>
+
+            <h4>Educación</h4>
+            <input type="text" id="educacion1Titulo" placeholder="Título en Universidad 1" required>
+            <input type="text" id="educacion1Institucion" placeholder="Nombre de la Universidad 1, Fecha" required>
+            <textarea id="educacion1Descripcion" placeholder="Descripción de la educación 1" required></textarea>
+
+            <input type="text" id="certificacionTitulo" placeholder="Certificación Importante" required>
+            <input type="text" id="certificacionInstitucion" placeholder="Nombre de la Institución, Fecha" required>
+            <textarea id="certificacionDescripcion" placeholder="Descripción de la certificación" required></textarea>
+
+            <h4>Proyectos Destacados</h4>
+            <input type="text" id="proyecto1Nombre" placeholder="Nombre del Proyecto 1" required>
+            <textarea id="proyecto1Descripcion" placeholder="Descripción del proyecto 1" required></textarea>
+
+            <input type="text" id="proyecto2Nombre" placeholder="Nombre del Proyecto 2" required>
+            <textarea id="proyecto2Descripcion" placeholder="Descripción del proyecto 2" required></textarea>
+
+            <h4>Testimonios o Recomendaciones</h4>
+            <textarea id="testimonio1" placeholder="Testimonio 1" required></textarea>
+            <input type="text" id="autorTestimonio1" placeholder="Autor Testimonio 1" required>
+
+            <textarea id="testimonio2" placeholder="Testimonio 2" required></textarea>
+            <input type="text" id="autorTestimonio2" placeholder="Autor Testimonio 2" required>
+
+            <h4>Contacto</h4>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="telefono" placeholder="Teléfono" required>
+            <input type="url" id="linkedin" placeholder="LinkedIn" required>
+            <input type="url" id="github" placeholder="GitHub" required>
+
+            <button type="button" onclick="generateTemplate()">Generar Template</button>
+        </form>
+    </div>
+
+    <!-- Template del perfil -->
+    <div class="container" id="template-container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1 id="template-nombre"></h1>
+            <h2 id="template-cargo"></h2>
+            <p id="template-ubicacion"></p>
+        </div>
+
+        <!-- Sobre mí -->
+        <div class="section">
+            <h3>Sobre Mí <i class="fas fa-user"></i></h3>
+            <p id="template-sobreMi"></p>
+        </div>
+
+        <!-- Experiencia Profesional -->
+        <div class="section">
+            <h3>Experiencia Profesional <i class="fas fa-briefcase"></i></h3>
+
+            <div class="experience-item">
+                <h4 id="template-exp1Cargo"></h4>
+                <h5 id="template-exp1Empresa"></h5>
+                <p id="template-exp1Descripcion"></p>
+            </div>
+
+            <div class="experience-item">
+                <h4 id="template-exp2Cargo"></h4>
+                <h5 id="template-exp2Empresa"></h5>
+                <p id="template-exp2Descripcion"></p>
+            </div>
+        </div>
+
+        <!-- Habilidades Técnicas -->
+        <div class="section">
+            <h3>Habilidades Técnicas <i class="fas fa-code"></i></h3>
+            <div class="skills">
+                <div class="skill">
+                    <strong><i class="fas fa-laptop-code"></i> Lenguajes de Programación:</strong>
+                    <p id="template-habilidadesLenguajes"></p>
+                </div>
+                <div class="skill">
+                    <strong><i class="fas fa-cogs"></i> Frameworks:</strong>
+                    <p id="template-habilidadesFrameworks"></p>
+                </div>
+                <div class="skill">
+                    <strong><i class="fas fa-tools"></i> Herramientas:</strong>
+                    <p id="template-habilidadesHerramientas"></p>
+                </div>
+                <div class="skill">
+                    <strong><i class="fas fa-project-diagram"></i> Otros:</strong>
+                    <p id="template-habilidadesOtros"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Educación -->
+        <div class="section">
+            <h3>Educación <i class="fas fa-graduation-cap"></i></h3>
+            
+            <div class="education-item">
+                <h4 id="template-educacion1Titulo"></h4>
+                <h5 id="template-educacion1Institucion"></h5>
+                <p id="template-educacion1Descripcion"></p>
+            </div>
+            
+            <div class="education-item">
+                <h4 id="template-certificacionTitulo"></h4>
+                <h5 id="template-certificacionInstitucion"></h5>
+                <p id="template-certificacionDescripcion"></p>
+            </div>
+        </div>
+
+        <!-- Proyectos Destacados -->
+        <div class="section">
+            <h3>Proyectos Destacados <i class="fas fa-trophy"></i></h3>
+
+            <div class="project-item">
+                <h4 id="template-proyecto1Nombre"></h4>
+                <p id="template-proyecto1Descripcion"></p>
+            </div>
+
+            <div class="project-item">
+                <h4 id="template-proyecto2Nombre"></h4>
+                <p id="template-proyecto2Descripcion"></p>
+            </div>
+        </div>
+
+        <!-- Testimonios o Recomendaciones -->
+        <div class="section testimonials">
+            <h3>Recomendaciones <i class="fas fa-comments"></i></h3>
+
+            <div class="testimonial-item">
+                <p id="template-testimonio1"></p>
+                <p class="author" id="template-autorTestimonio1"></p>
+            </div>
+
+            <div class="testimonial-item">
+                <p id="template-testimonio2"></p>
+                <p class="author" id="template-autorTestimonio2"></p>
+            </div>
+        </div>
+
+        <!-- Información de Contacto -->
+        <div class="section contact-info">
+            <h3>Contacto <i class="fas fa-envelope"></i></h3>
+            <p><i class="fas fa-envelope"></i> Email: <span id="template-email"></span></p>
+            <p><i class="fas fa-phone"></i> Teléfono: <span id="template-telefono"></span></p>
+            <p><i class="fab fa-linkedin"></i> LinkedIn: <span id="template-linkedin"></span></p>
+            <p><i class="fab fa-github"></i> GitHub: <span id="template-github"></span></p>
+        </div>
+    </div>
+<br>
+<br>
+    <!-- Botones para descargar PDF o PNG -->
+    <div class="form-container download-buttons">
+        <button type="button" onclick="downloadPDF()">Descargar PDF</button>
+        <br><br>
+        <button type="button" onclick="downloadPNG()">Descargar PNG</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        function generateTemplate() {
+            // Recoger datos del formulario
+            document.getElementById('template-nombre').textContent = document.getElementById('nombre').value;
+            document.getElementById('template-cargo').textContent = document.getElementById('cargo').value;
+            document.getElementById('template-ubicacion').textContent = document.getElementById('ubicacion').value;
+            document.getElementById('template-sobreMi').textContent = document.getElementById('sobreMi').value;
+
+            document.getElementById('template-exp1Cargo').textContent = document.getElementById('exp1Cargo').value;
+            document.getElementById('template-exp1Empresa').textContent = document.getElementById('exp1Empresa').value;
+            document.getElementById('template-exp1Descripcion').textContent = document.getElementById('exp1Descripcion').value;
+
+            document.getElementById('template-exp2Cargo').textContent = document.getElementById('exp2Cargo').value;
+            document.getElementById('template-exp2Empresa').textContent = document.getElementById('exp2Empresa').value;
+            document.getElementById('template-exp2Descripcion').textContent = document.getElementById('exp2Descripcion').value;
+
+            document.getElementById('template-habilidadesLenguajes').textContent = document.getElementById('habilidadesLenguajes').value;
+            document.getElementById('template-habilidadesFrameworks').textContent = document.getElementById('habilidadesFrameworks').value;
+            document.getElementById('template-habilidadesHerramientas').textContent = document.getElementById('habilidadesHerramientas').value;
+            document.getElementById('template-habilidadesOtros').textContent = document.getElementById('habilidadesOtros').value;
+
+            document.getElementById('template-educacion1Titulo').textContent = document.getElementById('educacion1Titulo').value;
+            document.getElementById('template-educacion1Institucion').textContent = document.getElementById('educacion1Institucion').value;
+            document.getElementById('template-educacion1Descripcion').textContent = document.getElementById('educacion1Descripcion').value;
+
+            document.getElementById('template-certificacionTitulo').textContent = document.getElementById('certificacionTitulo').value;
+            document.getElementById('template-certificacionInstitucion').textContent = document.getElementById('certificacionInstitucion').value;
+            document.getElementById('template-certificacionDescripcion').textContent = document.getElementById('certificacionDescripcion').value;
+
+            document.getElementById('template-proyecto1Nombre').textContent = document.getElementById('proyecto1Nombre').value;
+            document.getElementById('template-proyecto1Descripcion').textContent = document.getElementById('proyecto1Descripcion').value;
+
+            document.getElementById('template-proyecto2Nombre').textContent = document.getElementById('proyecto2Nombre').value;
+            document.getElementById('template-proyecto2Descripcion').textContent = document.getElementById('proyecto2Descripcion').value;
+
+            document.getElementById('template-testimonio1').textContent = document.getElementById('testimonio1').value;
+            document.getElementById('template-autorTestimonio1').textContent = "- " + document.getElementById('autorTestimonio1').value;
+
+            document.getElementById('template-testimonio2').textContent = document.getElementById('testimonio2').value;
+            document.getElementById('template-autorTestimonio2').textContent = "- " + document.getElementById('autorTestimonio2').value;
+
+            document.getElementById('template-email').textContent = document.getElementById('email').value;
+            document.getElementById('template-telefono').textContent = document.getElementById('telefono').value;
+            document.getElementById('template-linkedin').textContent = document.getElementById('linkedin').value;
+            document.getElementById('template-github').textContent = document.getElementById('github').value;
+        }
+
+        function downloadPDF() {
+            html2canvas(document.querySelector('.container')).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF();
+                pdf.addImage(imgData, 'PNG', 0, 0);
+                pdf.save("template.pdf");
+            });
+        }
+
+        function downloadPNG() {
+            html2canvas(document.querySelector('.container')).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'template.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        }
+    </script>
+</body>
+</html>
